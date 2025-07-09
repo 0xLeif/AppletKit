@@ -1,0 +1,69 @@
+# Swift Style Guide for Gemini Code Review
+_This file goes in the `.gemini/` folder of your repository._
+
+---
+
+## Guiding Principles
+* **Clarity over conciseness:** Code should be easy to read and understand.
+* **Safety first:** Code should be safe from crashes and undefined behavior. Prioritize compile-time safety.
+* **Follow the Official Swift API Design Guidelines:** When in doubt, defer to the official guidelines at [swift.org/documentation/api-design-guidelines](https://www.swift.org/documentation/api-design-guidelines/).
+
+---
+
+## Naming Conventions
+* Use **UpperCamelCase** for types (classes, structs, enums, protocols).
+* Use **lowerCamelCase** for functions, methods, properties, variables, and enum cases.
+* Names should be clear and descriptive. Avoid abbreviations.
+
+---
+
+## Optionals
+* **Never use force-unwrapping (`!`)**: This can lead to runtime crashes.
+* Use `guard let` for early exits and to unwrap optionals.
+* Use `if let` for conditional blocks where an optional is needed.
+* Use the nil-coalescing operator (`??`) to provide a default value for an optional.
+
+---
+
+## Mutability
+* **Prefer `let` over `var`**: Use constants whenever a value will not be changed. This improves safety and makes intent clearer.
+
+---
+
+## Collections
+* Use native Swift collection types (`Array`, `Dictionary`, `Set`) over their Foundation counterparts (`NSArray`, etc.).
+* Use higher-order functions like `map`, `filter`, and `reduce` for collection transformations where it improves readability.
+
+---
+
+## Error Handling
+* Use Swift's `do-try-catch` mechanism for recoverable errors.
+* Avoid using `try?` or `try!` unless you are certain the operation will not throw an error or you are intentionally ignoring the error.
+* Create specific, descriptive error types that conform to the `Error` protocol.
+
+---
+
+## Access Control
+* Use the most restrictive access control level possible (e.g., `private`, `fileprivate`).
+* Default to `internal` and only expose what is necessary with `public` or `open`.
+
+---
+
+## Type System
+* **Prefer Value Types:** Use `struct` and `enum` over `class` where possible. This helps prevent side effects from shared mutable state.
+* **Leverage Protocol-Oriented Programming:** Use protocols to define interfaces and use protocol extensions to provide default implementations.
+* **Clarity in Type Inference:** While type inference is powerful, explicitly declare types for public properties and function signatures to make APIs clearer.
+
+---
+
+## SwiftUI Best Practices (for multiplatform apps)
+* **Keep Views small and focused:** Break down complex views into smaller, reusable components.
+* **Use `@State` for transient, view-specific state.** For state shared across views, use `@StateObject`, `@ObservedObject`, or `@EnvironmentObject`.
+* **Prefer computed properties over functions for `body` sub-components** that don't take parameters.
+
+---
+
+## Code Formatting and Comments
+* Use `// MARK: -` to organize code into logical sections.
+* Use `// TODO:` for tasks that need to be done and `// FIXME:` for known issues that need fixing.
+* Document all public APIs with clear, concise comments.
