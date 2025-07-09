@@ -1,11 +1,3 @@
-You are right. The term "unidirectional" can be confusing, and the previous diagram was not Markdown-friendly.
-
-Thank you for the feedback\! I've revised the architecture section to be clearer and to render correctly. The new explanation separates the **Module Dependency Hierarchy** from the **Data Flow** for better clarity.
-
-Here is the updated README:
-
------
-
 # AppletKit: A Modular Architecture for Swift Applications
 
 **AppletKit is a template repository for building modern, modular, and scalable applications in Swift.**
