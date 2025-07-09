@@ -152,11 +152,11 @@ Even when used independently, applets can still communicate through their **Inte
     import YourNewAppletInterface
 
     struct InteractingAppletView: View {
-        @AppState(\.yourFeatureState.counter) private var sharedCounter
+        @AppState(\.yourFeatureState) private var YourFeatureState
 
         public var body: some View {
             VStack {
-                Text("Shared Counter: \(sharedCounter)")
+                Text("Shared Counter: \(yourFeatureState.counter)")
                 Button("Increment") {
                     sharedCounter += 1
                 }
