@@ -135,9 +135,9 @@ Even when used independently, applets can still communicate through their **Inte
 3.  **Register the State**: Extend the `Application` object from `AppState` to register your state with an initial value.
 
     ```swift
+    // In: Applets/YourNewApplet/Sources/YourNewAppletInterface/Application+YourAppState.swift
     import AppState
-    import YourNewAppletInterface
-
+    
     extension Application {
         public var yourFeatureState: State<YourFeatureState> {
             state(initial: YourFeatureState())
