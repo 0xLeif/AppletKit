@@ -105,7 +105,7 @@ Even when used independently, applets can still communicate through their **Inte
     import Applet // Provides the Applet protocol
 
     public struct YourNewApplet: Applet {
-        public let id: String = "com.your-domain.your-new-applet"
+        public let id: String = "your.new.applet"
         public let title: String = "My New Applet"
 
         public init() { } // Required by the Applet protocol
