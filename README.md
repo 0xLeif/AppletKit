@@ -6,8 +6,6 @@ It provides a flexible architecture where features are encapsulated into indepen
 
 This project is designed to be **forked**, providing a robust foundation for your next application.
 
------
-
 ## The AppletKit Architecture
 
 AppletKit is built on a clean, layered architecture that promotes a clear separation of concerns. This makes your project easier to manage, scale, and maintain. The architecture can be understood in two key ways: the module dependency hierarchy and the data flow.
@@ -33,8 +31,6 @@ While modules depend on each other in one direction, data flows in a cycle, whic
 
 This approach decouples the state from the UI, allowing multiple independent applets to react to and modify the same shared data source without needing to know about each other.
 
------
-
 ## How to Use AppletKit
 
 This repository is a **template**. The best way to start is to create your own copy.
@@ -51,8 +47,6 @@ Navigate to the cloned directory and open the `Package.swift` file at the root o
 
 **3. Run the Example**
 Select a simulator or device and run the project. You will see the example application, which demonstrates two applets working together in a `TabView` and sharing state.
-
------
 
 ## Building Your Application
 
