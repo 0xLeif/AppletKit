@@ -1,0 +1,50 @@
+# This file goes in the .gemini/ folder of your repository.
+# It allows you to configure the behavior of the Gemini code reviewer.
+# This configuration is optimized for a Swift / Apple platforms project.
+
+# A fun little setting.
+have_fun: true
+
+code_review:
+  # Set to true to disable code review on all pull requests.
+  disable: false
+
+  # The minimum severity level for comments to be posted.
+  # Options: LOW, MEDIUM, HIGH, CRITICAL
+  comment_severity_threshold: LOW
+
+  # The maximum number of review comments to post.
+  # -1 means no limit.
+  max_review_comments: -1
+
+  # Configure what happens when a pull request is first opened.
+  pull_request_opened:
+    # Set to true to post a help message.
+    help: false
+    # Set to false to disable the summary of changes.
+    summary: true
+    # Set to false to disable the initial code review.
+    code_review: true
+
+# Use glob patterns to specify files and directories to ignore during review.
+# These are tailored for Swift, SPM, and Xcode projects.
+ignore_patterns:
+  # Swift Package Manager build artifacts and resolved dependencies
+  - ".build/"
+  - "Package.resolved"
+
+  # Xcode project and workspace files (often contain user-specific settings)
+  - "*.xcodeproj/"
+  - "*.xcworkspace/"
+
+  # Common dependency manager directories for CocoaPods and Carthage
+  - "Pods/"
+  - "Carthage/"
+
+  # Example path for generated code (e.g., from Sourcery, SwiftGen). Adjust if needed.
+  - "**/Generated/**"
+
+  # Ignore resource files where code review isn't applicable
+  - "**/*.storyboard"
+  - "**/*.xib"
+  - "**/*.xcassets/**"
